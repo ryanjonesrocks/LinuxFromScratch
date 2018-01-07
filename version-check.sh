@@ -33,7 +33,7 @@ else
   echo "awk not found"
 fi
 
-13Linux From Scratch - Version 8.1-systemd
+
 gcc --version | head -n1
 g++ --version | head -n1
 ldd --version | head -n1 | cut -d" " -f2-
@@ -48,3 +48,9 @@ sed --version | head -n1
 tar --version | head -n1
 makeinfo --version | head -n1
 xz --version | head -n1
+
+echo 'main(){}' > dummy.c && gcc -o dummy dummy.c
+if [ -x dummy ] 
+  then echo "gcc compilation OK";
+  else echo "gcc compilation failed"; fi
+rm -f dummy.c dummy
