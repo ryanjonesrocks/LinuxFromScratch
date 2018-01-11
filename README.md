@@ -10,12 +10,29 @@ Linux From Scratch (LFS) is a project that allows you to create your own Linux D
 ## Why Linux From Scratch?  
 I have had such a great experience using Arch Linux and want to go beyond a minimalist Linux distribution. Arch and LFS are both rolling release but differ from the fact that in LFS you have to build the packages from source. Arch uses a package manager, so you either download the package from the Official Arch Repository using the `pacman -S [name of package]` command or from the Arch User Repository (AUR) using the `yaourt [name of package]` command. Building a package from source requires the user to manually download the package and configure it to work on the system. This takes A LOT more work. LFS is the next step towards a deeper level of understanding of Linux. By building this Operating System from scratch, the developer will get a better sense of the internal workings of Linux. If you love Linux, this is definitively a good project to be a part of. This project should take a couple weeks to complete the first version.
 
-## Current Status of Project
-At this point, a flash drive is needed to partition the project.
-Linux From Scratch needs to be developed on a separate partition from the main OS 
-I will most likely need to purchase an 8GB flash drive to continue working on the project.
-In the meantime I will work on becoming more familiar with the LFS documentation.
+## Current Status of Project (Change Log)
+- Obtained an external usb drive to create the partition
+- Created the partition
+- Created file system for the partition
+- Writing super blocks and file system accounting information to external USB (8GB)
+NOTE: THESE COMMANDS NEED TO BE EXECUTED EVERYTIME THE SYSTEM RESTARTS
+1. Exported the LFS variable
+  `export LFS=/mnt/lfs`
+  `echo $LFS`
+2. Create Directory
+  ` mkdir -pv $LFS`
+3. Mount drive as an ext4 onto the directory
+  `sudo mount -v -t ext4 /dev/sdb $LFS`
+END OF COMMANDS
+- Downloaded the necessary packages and patches from site
+`wget http://www.linuxfromscratch.org/lfs/view/stable/wget-list`
+- Created The Linux From Scratch Tools Directory
+- Created a user for the LFS distro on the host system.
+This is to prevents any leaks from the host system into the build environment.
+- Set up the working environment!
 
+##NOTE
+The Linux for scratch distro is located inside the lfs directory.
 
 ## Potential Names for This Distro
   - Desert Linux
