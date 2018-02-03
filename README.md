@@ -10,7 +10,21 @@ Linux From Scratch (LFS) is a project that allows you to create your own Linux D
 ## Why Linux From Scratch?  
 I have had such a great experience using Arch Linux and want to go beyond a minimalist Linux distribution. Arch and LFS are both rolling release but differ from the fact that in LFS you have to build the packages from source. Arch uses a package manager, so you either download the package from the Official Arch Repository using the `pacman -S [name of package]` command or from the Arch User Repository (AUR) using the `yaourt [name of package]` command. Building a package from source requires the user to manually download the package and configure it to work on the system. This takes A LOT more work. LFS is the next step towards a deeper level of understanding of Linux. By building this Operating System from scratch, the developer will get a better sense of the internal workings of Linux. If you love Linux, this is definitively a good project to be a part of. This project should take a couple weeks to complete the first version.
 
-## Current Status of Project (Change Log)
+## Change Log
+
+### 2018-02-03: Building GCC
+- Using multithreading to build packages
+- Compiled GCC
+- To Do: run makefile for GCC
+
+### 2018-02-02: Building Binutils
+- Patched the packages 
+- Today I worked with installing the Binutils package on my Linux Distribution. The Binutils package contains a linker, an assembler, and other tools for handling object files. I will need to be taking note of the time it takes to build this package. The package build time will be measured in Standard Build Units (SBU). An SBU is a measure the time it takes to build the binutils package from the configuration. The approximate build time on my system was roughly around 4:07 Minutes. This build time was unacceptable for the specs on my system.
+- I realized that there were two issues when building the Binutils package. It wasn't being optimized for x86 architecture and it was only being built on one core 
+- To optimize the build for x86, a symbolic link was created to ensure there would be no issues with the toolchain. 
+- I found a command to rebuild the system with 4 cores, this dramatically decreases build time. 
+
+### 2018-01-10: Partition
 - Obtained an external usb drive to create the partition
 - Created the partition
 - Created file system for the partition
@@ -30,6 +44,8 @@ END OF COMMANDS
 - Created a user for the LFS distro on the host system.
 This is to prevents any leaks from the host system into the build environment.
 - Set up the working environment!
+
+
 
 ##NOTE
 The Linux for scratch distro is located inside the lfs directory.
