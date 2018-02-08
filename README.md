@@ -61,3 +61,5 @@ I've been having issues uploading all the files to GitHub, the files seem to be 
 `Ctrl + z` pause compilation
 
 `fg` continues compilation
+
+`ps` snapshot of the current process
