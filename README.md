@@ -57,5 +57,7 @@ I've been having issues uploading all the files to GitHub, the files seem to be 
   
 ## Automatic Compilation in C
 `watch "gcc test.c" && ./a.out"`
+
 `Ctrl + z` pause compilation
+
 `fg` continues compilation
