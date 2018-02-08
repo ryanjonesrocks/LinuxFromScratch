@@ -45,10 +45,8 @@ END OF COMMANDS
 This is to prevents any leaks from the host system into the build environment.
 - Set up the working environment!
 
-
-
-##NOTE
-The Linux for scratch distro is located inside the lfs directory.
+## NOTE
+I've been having issues uploading all the files to GitHub, the files seem to be to large. The Linux from scratch distro was originally located inside the lfs directory. I'm thinking about either hosting the LFS distro on another GitHub alternative or on my local server. 
 
 ## Potential Names for This Distro
   - Desert Linux
@@ -56,3 +54,8 @@ The Linux for scratch distro is located inside the lfs directory.
   - Desert Digital OS
   - Jones Linux
   - Salsa Linux (I really like Salsa)
+  
+## Automatic Compilation in C
+`watch "gcc test.c" && ./a.out"`
+`Ctrl + z` pause compilation
+`fg` continues compilation
